@@ -1,8 +1,8 @@
 # Bloggy
 a template Articles website implemented with Django
 
-![alt text](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.png)
+![welcome page](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.PNG)
 
-![alt text](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.png)
+![articles](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.PNG)
 
-![alt text](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png)
+![article details](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png)
