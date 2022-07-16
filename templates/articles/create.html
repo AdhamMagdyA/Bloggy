@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+    
+{% block content %}
+    <!-- form to create new articles-->
+    <h1 class="font-weight-bold text-center mt-3">Create Article</h1>
+    <form method="POST" action="{% url 'articles:create' %}" enctype="multipart/form-data" class="w-100 center ">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Create Article" class="btn btn-success">
+    </form>
+{% endblock %}

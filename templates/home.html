@@ -1,0 +1,30 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    {% block content %}
+    <!--- main content of the page centerd horizontaly and vertically -->
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="display-4">Welcome to Bloggy</h1>
+                    <p class="lead">wanna know more in today's techs, jump in</p>
+                    <hr class="my-4">
+                    <p>our goal is to provide you with many useful articles in the tech fields that will make you up to date with the present trends.</p>
+                    <a class="btn btn-success btn-lg" href="/articles/" role="button">Check our Articles</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+</body>
+</html>
