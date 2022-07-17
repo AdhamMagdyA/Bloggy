@@ -14,7 +14,7 @@ A website that allows you to discover tech articles. you can write and publish a
 
 ## Technologies
 
-![HTML](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/html-5.png)![CSS](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/css-3.png)![JS](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/js.png)![python](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/python.png)![bootstrap](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/bootstrap.png)
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/html-5.png" width="70px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/css-3.png" width="70px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/js.png" width="70px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/python.png" width="70px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/icons/bootstrap.png" width="70px">
 
 ## Instructions
 
@@ -33,8 +33,9 @@ A website that allows you to discover tech articles. you can write and publish a
 
 ## Screenshots
 
-![welcome page](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.PNG)![articles](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.PNG)
-![article details](https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png)
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png" width="500px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.PNG" width="500px">
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.PNG" width="500px">
+
 
 
 ## Footer
