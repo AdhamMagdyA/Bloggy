@@ -11,30 +11,7 @@
     <form method="POST" action="{% url 'accounts:login' %}">
         {% csrf_token %}
 
-        <!-- non field errors -->
-        {% if form.non_field_errors %}
-            <div class="alert alert-danger" role="alert">
-            {% for error in form.non_field_errors %}
-                {{ error }}
-            {% endfor %}
-            </div>
-        {% endif %}
-        
-        <!-- hidden fields -->
-        {% for hidden_field in form.hidden_fields %}
-            {{ hidden_field.errors }}
-            {{ hidden_field }}
-        {% endfor %}
-
-        <!-- main fields-->
-        {% for field in form.visible_fields %}
-            <div class="form-group">
-                {% render_field field placeholder=field.name class="form-control" %}
-                {% if field.help_text %}
-                    <small class="form-text text-muted">{{ field.help_text }}</small>
-                {% endif %}
-            </div>
-        {% endfor %}
+        {% include 'form.html' with form=form %}
 
         <!-- submit button -->
         <div style="margin:auto; width: 60px;">
