@@ -4,7 +4,7 @@
 
     
 {% block content %}
-<div class="p-3 mt-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
+<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
     <!-- form to create new articles-->
     <h1 class="font-weight-bold text-center mt-3">Create Article</h1>
     <form method="POST" action="{% url 'articles:create' %}" enctype="multipart/form-data" class="w-100 center ">
@@ -24,17 +24,34 @@
             {{ hidden_field }}
         {% endfor %}
 
-        <!-- main fields -->
+        <!-- main fields-->
         {% for field in form.visible_fields %}
             <div class="form-group">
-                {% render_field field placeholder=field.name class="form-control"%}
-            </div>
-            {% if field.help_text %}
-                    <small class="form-text text-muted">{{ field.help_text }}</small>
-            {% endif %}
-        {% endfor %}    
+                {{ field.label_tag }}
 
-        <input type="submit" value="Create Article" class="btn btn-success">
+                {% if form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                            <div class="invalid-feedback">
+                            {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field field class="form-control" %}
+                {% endif %}
+
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}    
+        <div style="width: 25%; margin:auto;">
+            <input type="submit" value="Create Article" class="btn btn-success">
+        </div>
     </form>
 </div>
 {% endblock %}
