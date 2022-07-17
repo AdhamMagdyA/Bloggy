@@ -1,12 +1,40 @@
 {% extends 'base_layout.html' %}
 
+{% load widget_tweaks %}
+
     
 {% block content %}
+<div class="p-3 mt-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
     <!-- form to create new articles-->
     <h1 class="font-weight-bold text-center mt-3">Create Article</h1>
     <form method="POST" action="{% url 'articles:create' %}" enctype="multipart/form-data" class="w-100 center ">
         {% csrf_token %}
-        {{form}}
+        <!-- non-field errors -->
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                    {{error}}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- invisible fields -->
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+        {% endfor %}
+
+        <!-- main fields -->
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                {% render_field field placeholder=field.name class="form-control"%}
+            </div>
+            {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+        {% endfor %}    
+
         <input type="submit" value="Create Article" class="btn btn-success">
     </form>
+</div>
 {% endblock %}
