@@ -1,14 +1,43 @@
 {% extends 'base_layout.html' %}
 
+{% load static %}
+{% load widget_tweaks %}
+
+
 {% block content %}
 
-<h1 class="font-weight-bold text-center mt-3">Login</h1>
-<form method="POST" action="{% url 'accounts:login' %}" >
-    {% csrf_token %}
-    {{ form }}
-    {% if request.GET.next %}
-        <input type="hidden" name="next" value="{{ request.GET.next }}">
-    {% endif %}
-    <input type="submit" value="Login">
-</form>
+<div class="p-3 mt-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
+    <h1 class="font-weight-bold text-center mt-3">Login</h1>
+    <form method="POST" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+
+        <!-- non field errors -->
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+            {% for error in form.non_field_errors %}
+                {{ error }}
+            {% endfor %}
+            </div>
+        {% endif %}
+        
+        <!-- hidden fields -->
+        {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field.errors }}
+            {{ hidden_field }}
+        {% endfor %}
+
+        <!-- main fields-->
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+            {% render_field field placeholder=field.name class="form-control" %}
+            {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+            {% endif %}
+            </div>
+        {% endfor %}
+
+        <!-- submit button -->
+        <input class="btn btn-success" type="submit" value="Login">
+    </form>
+</div>
 {% endblock %}

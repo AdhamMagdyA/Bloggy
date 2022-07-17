@@ -5,43 +5,23 @@
 <h1 class="font-weight-bold text-center mt-3">Sign Up</h1>
 <form method="POST" action="/accounts/register/" id="signup">
     {% csrf_token %}
-    {{ form }}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endfor %}
+    {% for field in form.visible_fields %}
+        <div class="form-group has-validation">
+            <label for="{{ field.name }}">{{ field.label }}</label>
+            {% if field.errors %}
+                <div class="invalid-feedback">{{ field.errors.as_text }}</div>
+            {% endif %}
+            {{ field }}
+        </div>
+    {% endfor %}
+
     <input type="submit" value="register">
 </form>
 
-<script src="{% static 'ajax.js' %}"></script>
-
-<!--sign up form with bootstrap-->
-<!-- <div class="container pt-4">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1>Sign Up</h1>
-            <form action="/accounts/register/" method="POST">
-                <div class="form-group">
-                    <label for="first-name">First Name</label>
-                    <input type="text" class="form-control" id="first-name" name="first-name" placeholder="Enter first name">
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" class="form-control" id="last-name" name="last-name" placeholder="Enter last name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
-            </form>
-        </div>
-    </div>
-</div> -->
+<!-- <script src="{% static 'ajax.js' %}"></script> -->
 
 
 {% endblock %}

@@ -1,4 +1,3 @@
-from http.client import HTTPResponse
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
