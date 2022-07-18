@@ -11,8 +11,8 @@
 
 <!-- hidden fields -->
 {% for hidden_field in form.hidden_fields %}
-{{ hidden_field.errors }}
-{{ hidden_field }}
+    {{ hidden_field.errors }}
+    {{ hidden_field }}
 {% endfor %}
 
 <!-- main fields-->
@@ -29,7 +29,7 @@
                 </div>
             {% endfor %}
         {% else %}
-            {% render_field field class="form-control is-valid" %}
+            {% render_field field class="form-control" %}
         {% endif %}
     {% else %}
         {% render_field field class="form-control" %}
