@@ -33,8 +33,13 @@ A website that allows you to discover tech articles. you can write and publish a
 
 ## Screenshots
 
-<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png" width="500px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.PNG" width="500px">
-<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.PNG" width="500px">
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/1.PNG" width="700px">
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/2.PNG" width="700px">
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/3.png" width="700px">
+
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/4.PNG" width="230px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/6.PNG" width="230px"> <img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/5.PNG" width="230px"> 
+
+<img src="https://github.com/AdhamMagdyA/Bloggy/blob/main/screenshots/7.PNG" width="500px">
 
 
 
