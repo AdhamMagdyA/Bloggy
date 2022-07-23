@@ -14,7 +14,7 @@
                     </p>
                 </div>
                 <div class="col-md-8">
-                    <p>{{ article.body }}</p>
+                    <p>{{ article.body | safe }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             {% if article.author == request.user or request.user.is_superuser%}

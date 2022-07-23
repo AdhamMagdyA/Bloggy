@@ -1,7 +1,10 @@
 from django import forms
 from . import models
+from ckeditor.widgets import CKEditorWidget
+
 
 class CreateArticleForm(forms.ModelForm):
+    body = forms.CharField(widget = CKEditorWidget())
     class Meta:
         model = models.Article
         fields = ['title', 'body', 'slug','thumbnail']

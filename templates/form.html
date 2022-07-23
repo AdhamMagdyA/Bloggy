@@ -16,23 +16,25 @@
 {% endfor %}
 
 <!-- main fields-->
+
 {% for field in form.visible_fields %}
 <div class="form-group">
+    {{ form.media }}
     {{ field.label_tag }}
 
     {% if form.is_bound %}
         {% if field.errors %}
-            {% render_field field class="form-control is-invalid" %}
+            {% render_field field class="form-control is-invalid w-100" %}
             {% for error in field.errors %}
                 <div class="invalid-feedback">
                 {{ error }}
                 </div>
             {% endfor %}
         {% else %}
-            {% render_field field class="form-control" %}
+            {% render_field field class="form-control w-100" %}
         {% endif %}
     {% else %}
-        {% render_field field class="form-control" %}
+        {% render_field field class="form-control w-100" %}
     {% endif %}
 
     {% if field.help_text %}

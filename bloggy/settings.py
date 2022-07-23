@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'articles.apps.ArticlesConfig',
     'accounts.apps.AccountsConfig',
-    'captcha',
     'widget_tweaks',
+    'captcha',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = "my_url"
 # LOGIN_URL = "accounts/login"
+
+CKEDITOR_CONFIGS = {
+    "default": {
+        "resize_enabled": True,
+    }
+}
