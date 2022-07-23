@@ -11,7 +11,7 @@ def index(request):
     }
     return render(request, 'articles/index.html',context)
 
-@login_required(login_url='/accounts/login/')
+@login_required()
 def create(request):
     if request.method == 'POST':
         form = CreateArticleForm(request.POST, request.FILES)

@@ -1,3 +1,4 @@
+from turtle import home
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -5,6 +6,8 @@ from django.contrib.auth import login, logout
 from captcha.fields import CaptchaField
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+from numpy import require
 
 class SignUpForm(UserCreationForm):
     class Meta:
@@ -42,13 +45,15 @@ def loginView(request):
             user = form.get_user()
             login(request, user)
             if 'next' in request.POST:
-                return redirect(request.POST.get('next'))
+                return redirect(request.POST['next'])
             return redirect('home')
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', {'form': form})
 
+@login_required()
 def logoutView(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+    return render(request, 'home.html')

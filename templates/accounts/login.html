@@ -13,6 +13,9 @@
 
         {% include 'form.html' with form=form %}
 
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
         <!-- submit button -->
         <div style="margin:auto; width: 60px;">
             <input class="btn btn-success" type="submit" value="Login">
