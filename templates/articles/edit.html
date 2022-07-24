@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+
+{% load widget_tweaks %}
+{% load static %}
+
+    
+{% block content %}
+<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
+    <!-- form to create new articles-->
+    <h1 class="font-weight-bold text-center mt-3">Edit Article</h1>
+    <form method="POST" action="/articles/{{ article.slug }}/edit/" enctype="multipart/form-data" class="w-100 center" onload="changeWidth()">
+        {% csrf_token %}
+        {{form.media}}
+        {% include 'form.html' with form=form %}
+        <div style="width: 25%; margin:auto;">
+            <input type="submit" value="Create Article" class="btn btn-success">
+        </div>
+    </form>
+</div>
+<script src="{% static 'load.js' %}"></script>
+{% endblock %}
