@@ -20,7 +20,15 @@ class EditArticleForm(forms.ModelForm):
     body = forms.CharField(widget = CKEditorWidget())
     class Meta:
         model = models.Article
-        fields = ['title', 'body','thumbnail']
+        fields = ['title', 'body']
+    
+class SubmittedArticleForm(forms.ModelForm):
+    class Meta:
+        model = models.Article
+        fields = ['title', 'body']
+        widgets = {
+            'body': CKEditorWidget(),
+        }
 
     # def clean_slug(self):
     #     new_slug = self.cleaned_data['slug'].lower()
