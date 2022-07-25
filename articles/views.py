@@ -35,13 +35,19 @@ def edit(request, article_slug):
             # returns a new instance of the article (model of the form) 
             # but does not commit the save to the database yet
             article.title = form.cleaned_data['title']
-            article.body = form.cleaned_data['body']
+            article.body = form.cleaned_data['body']    
             article.save()
             return redirect('articles:get', article_slug=article.slug)
     if request.method == 'GET':
         article = Article.objects.get(slug=article_slug)
         form = EditArticleForm(article.title, article.body, article.thumbnail)
         return render(request, 'articles/edit.html', {'form': form, 'article': article})
+
+@login_required()
+def delete(request, article_slug):
+    article = Article.objects.get(slug=article_slug)
+    article.delete()
+    return redirect('articles:index')
 
 def get(request, article_slug):
     article = Article.objects.get(slug=article_slug)
