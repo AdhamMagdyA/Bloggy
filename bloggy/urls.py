@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', views.about),
+    path('about/', views.about, name='about'),
     path('', views.home, name='home'),
     path('captcha/', include('captcha.urls')),
 
