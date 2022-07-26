@@ -3,7 +3,7 @@
 {% load widget_tweaks %}
 {% block content %}
 
-<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
+<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded site-form">
     <h1 class="font-weight-bold text-center mt-3">Sign Up</h1>
     <form method="POST" action="/accounts/register/" id="signup">
         {% csrf_token %}

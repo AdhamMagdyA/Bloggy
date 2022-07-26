@@ -5,7 +5,7 @@
 
     
 {% block content %}
-<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded w-50 site-form">
+<div class="p-3 mt-5 mb-5 bg-opacity-10 border border-secondary border-start-1 rounded site-form">
     <!-- form to create new articles-->
     <h1 class="font-weight-bold text-center mt-3">Create Article</h1>
     <form method="POST" action="{% url 'articles:create' %}" enctype="multipart/form-data" class="w-100 center" onload="changeWidth()">
